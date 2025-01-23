@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Stats</title>
+</head>
+<body>
+    <h1>Short URL Stats</h1>
+    <p><strong>Short URL:</strong> <a href="/{{url_data['short_url']}}">{{ url_data["short_url"] }}</a></p>
+    <p><strong>Long URL:</strong> <a href="{{url_data['long_url']}}" target="_blank">{{ url_data["long_url"] }}</a></p>
+    <p><strong>Clicks:</strong> {{ url_data["clicks"] }}</p>
+    <p><a href="/">Home</a></p>
+
+    <h2>Update Long URL</h2>
+    <form method="post">
+        <input type="hidden" name="short_url" value="{{ url_data['short_url'] }}">
+        <label for="long_url">New Long URL:</label>
+        <input type="url" id="long_url" name="long_url" required>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
